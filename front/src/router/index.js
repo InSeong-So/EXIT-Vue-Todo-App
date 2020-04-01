@@ -9,9 +9,10 @@ Vue.prototype.$http = axios
 Vue.use(Router)
 
 export default new Router({
-    routes: [{
-        path: '/',
-        name: 'TodoPage',
-        component: TodoPage
-    }]
+  routes: [
+    {
+      path: '/',
+      name: 'TodoPage',
+      component: TodoPage
+    },]
 });

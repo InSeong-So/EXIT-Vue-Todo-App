@@ -28,7 +28,7 @@
 <script>
 export default {
   name: 'TodoPage',
-  data(){ 
+  data(){
     return {
     name:null,
     todos: [],
@@ -43,7 +43,7 @@ export default {
           vm.$http.delete('http://101.235.203.94:8226/api/todos/'+todo.id)
           .then((result) => {
               obj.splice(i, 1)
-          })  
+          })
         }
       })
     },
