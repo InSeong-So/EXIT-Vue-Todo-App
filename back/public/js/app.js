@@ -79,7 +79,7 @@ class Renderer {
                 await $this.model.setTodos(todos)
                 $this.todosRender(todos)
                 e.target.value = ''
-                e.target.focus
+                e.target.focus()
             }
         }
     }

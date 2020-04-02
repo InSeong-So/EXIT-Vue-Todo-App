@@ -14,92 +14,92 @@ app.use(express.static('public'))
 
 // index page
 app.get('/', (req, res) => {
-  res.render('index') // index.html render
+    res.render('index') // index.html render
 })
 
 // todos
 app.route('/api/todos')
     .get(async (req, res) => {
-      const result = {success: true}
-      try {
-        const json = await db.getData()
-        result.data = json.todos
-      } catch (err) {
-        result.success = false
-        result.err = err
-      }
-      res.json(result)
+        const result = {success: true}
+        try {
+            const json = await db.getData()
+            result.data = json.todos
+        } catch (err) {
+            result.success = false
+            result.err = err
+        }
+        res.json(result)
     })
     .post(async (req, res) => {
-      const result = {success: true}
-      const todos = req.body.todos
-      try {
-        const json = await db.getData()
-        json.todos = todos
-        await db.setData(json)
-      } catch (err) {
-        result.success = false
-        result.err = err
-      }
-      res.json(result)
+        const result = {success: true}
+        const todos = req.body.todos
+        try {
+            const json = await db.getData()
+            json.todos = todos
+            await db.setData(json)
+        } catch (err) {
+            result.success = false
+            result.err = err
+        }
+        res.json(result)
     })
 // detail
 app.route('/api/detail/:idx')
     .get(async (req, res) => {
-      const result = {success: true}
-      const reIdx = req.params.idx
-      try {
-        const json = await db.getData()
-        let list = []
-        json.detail.forEach((v, idx) => {
-          if (v.idx === reIdx) {
-            list.push(v)
-          }
-        })
-        result.data = list
-      } catch (err) {
-        result.success = false
-        result.err = err
-      }
-      res.json(result)
+        const result = {success: true}
+        const reIdx = req.params.idx
+        try {
+            const json = await db.getData()
+            let list = []
+            json.detail.forEach((v, idx) => {
+                if (v.idx === reIdx) {
+                    list.push(v)
+                }
+            })
+            result.data = list
+        } catch (err) {
+            result.success = false
+            result.err = err
+        }
+        res.json(result)
     })
     .post(async (req, res) => {
-      const result = {success: true}
-      const detail = req.body.detail
-      const idx = req.params.idx
-      try {
-        const json = await db.getData()
-        detail.idx = idx
-        json.detail.push(detail)
-        await db.setData(json)
-      } catch (err) {
-        result.success = false
-        result.err = err
-      }
-      res.json(result)
+        const result = {success: true}
+        const detail = req.body.detail
+        const idx = req.params.idx
+        try {
+            const json = await db.getData()
+            detail.idx = idx
+            json.detail.push(detail)
+            await db.setData(json)
+        } catch (err) {
+            result.success = false
+            result.err = err
+        }
+        res.json(result)
     })
     .put(async (req, res) => {
-      const result = {success: true}
-      const detail = req.body.detail
-      const idx = req.params.idx
-      try {
-        const json = await db.getData()
-        json.detail[idx] = detail
-        await db.setData(json)
-      } catch (err) {
-        result.success = false
-        result.err = err
-      }
-      res.json(result)
+        const result = {success: true}
+        const detail = req.body.detail
+        const idx = req.params.idx
+        try {
+            const json = await db.getData()
+            json.detail[idx] = detail
+            await db.setData(json)
+        } catch (err) {
+            result.success = false
+            result.err = err
+        }
+        res.json(result)
     })
 app.route('/dbs')
-    .get(async (req, res) =>{
-      connection.query('SELECT * FROM REST_API_01', (err, rows) =>{
-        if(err) throw err;
+    .get(async (req, res) => {
+        connection.query('SELECT * FROM REST_API_01', (err, rows) => {
+            if (err) throw err;
 
-        console.log('Result is : ', rows);
-        res.send(rows);
-      })
+            console.log('Result is : ', rows);
+            res.send(rows);
+        })
     });
 // .delete(async (req, res) => {
 //     const result = {success: true}
@@ -108,5 +108,5 @@ app.route('/dbs')
 // })
 
 app.listen(8226, () => {
-  console.log("Server has been started")
+    console.log("Server has been started")
 })
