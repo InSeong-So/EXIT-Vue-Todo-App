@@ -13,35 +13,36 @@ app.use(express.json())
 app.use(express.static('public'))
 
 // index page
-app.get('/', (req, res) => {
-    res.render('index') // index.html render
-})
+app.route('/')
+    .get((req, res) => {
+        res.render('index') // index.html render
+    })
 
-// todos
-app.route('/api/todos')
+// todoList
+app.route('/api/todoList')
     .get(async (req, res) => {
         const result = {success: true}
         try {
             const json = await db.getData()
-            result.data = json.todos
+            result.data = json.todoList
         } catch (err) {
             result.success = false
             result.err = err
         }
-        res.json(result)
+        await res.json(result)
     })
     .post(async (req, res) => {
         const result = {success: true}
-        const todos = req.body.todos
+        const todoList = req.body.todoList
         try {
             const json = await db.getData()
-            json.todos = todos
+            json.todoList = todoList
             await db.setData(json)
         } catch (err) {
             result.success = false
             result.err = err
         }
-        res.json(result)
+        await res.json(result)
     })
 // detail
 app.route('/api/detail/:idx')
@@ -61,7 +62,7 @@ app.route('/api/detail/:idx')
             result.success = false
             result.err = err
         }
-        res.json(result)
+        await res.json(result)
     })
     .post(async (req, res) => {
         const result = {success: true}
@@ -76,7 +77,7 @@ app.route('/api/detail/:idx')
             result.success = false
             result.err = err
         }
-        res.json(result)
+        await res.json(result)
     })
     .put(async (req, res) => {
         const result = {success: true}
@@ -90,7 +91,7 @@ app.route('/api/detail/:idx')
             result.success = false
             result.err = err
         }
-        res.json(result)
+        await res.json(result)
     })
 app.route('/dbs')
     .get(async (req, res) => {
@@ -100,12 +101,12 @@ app.route('/dbs')
             console.log('Result is : ', rows);
             res.send(rows);
         })
-    });
-// .delete(async (req, res) => {
-//     const result = {success: true}
-//     const detail = req.body.detail
-//     const idx = req.params.idx
-// })
+    })
+    .delete(async (req, res) => {
+        const result = {success: true}
+        const detail = req.body.detail
+        const idx = req.params.idx
+    })
 
 app.listen(8226, () => {
     console.log("Server has been started")
