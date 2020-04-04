@@ -13,25 +13,124 @@
       </div>
     </div>
 
-    <div class="input-group mb-3" v-for="(todo, index) in todoList">
-      <input type="text" class="form-control" :value="todo.name">
-      <div class="input-group-append">
-        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">Dropdown
-        </button>
-        <div class="dropdown-menu">
-          <li>
-            <button type="button" class="dropdown-item" data-toggle="modal" data-target="#detailModal"
-                    @click="getDetail(todo)">상세보기
-            </button>
-          </li>
-          <li>
-            <div class="dropdown-divider"></div>
-          </li>
-          <li><a href="#" class="dropdown-item" @click="deleteTodo(todo)">삭제</a></li>
+
+    <ul class=" list-group list-group-flush">
+      <li class="list-group-item">
+        <div class="todo-indicator bg-warning"></div>
+        <div class="widget-content p-0">
+          <div class="widget-content-wrapper">
+            <div class="widget-content-left mr-2">
+              <div class="custom-checkbox custom-control"> <input class="custom-control-input" id="exampleCustomCheckbox12" type="checkbox"><label class="custom-control-label" for="exampleCustomCheckbox12">&nbsp;</label> </div>
+            </div>
+            <div class="widget-content-left">
+              <div class="widget-heading">Call Sam For payments <div class="badge badge-danger ml-2">Rejected</div>
+              </div>
+              <div class="widget-subheading"><i>By Bob</i></div>
+            </div>
+            <div class="widget-content-right"> <button class="border-0 btn-transition btn btn-outline-success"> <i class="fa fa-check"></i></button> <button class="border-0 btn-transition btn btn-outline-danger"> <i class="fa fa-trash"></i> </button> </div>
+          </div>
         </div>
-      </div>
-    </div>
+      </li>
+      <li class="list-group-item">
+        <div class="todo-indicator bg-focus"></div>
+        <div class="widget-content p-0">
+          <div class="widget-content-wrapper">
+            <div class="widget-content-left mr-2">
+              <div class="custom-checkbox custom-control"><input class="custom-control-input" id="exampleCustomCheckbox1" type="checkbox"><label class="custom-control-label" for="exampleCustomCheckbox1">&nbsp;</label></div>
+            </div>
+            <div class="widget-content-left">
+              <div class="widget-heading">Make payment to Bluedart</div>
+              <div class="widget-subheading">
+                <div>By Johnny <div class="badge badge-pill badge-info ml-2">NEW</div>
+                </div>
+              </div>
+            </div>
+            <div class="widget-content-right"> <button class="border-0 btn-transition btn btn-outline-success"> <i class="fa fa-check"></i></button> <button class="border-0 btn-transition btn btn-outline-danger"> <i class="fa fa-trash"></i> </button> </div>
+          </div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="todo-indicator bg-primary"></div>
+        <div class="widget-content p-0">
+          <div class="widget-content-wrapper">
+            <div class="widget-content-left mr-2">
+              <div class="custom-checkbox custom-control"><input class="custom-control-input" id="exampleCustomCheckbox4" type="checkbox"><label class="custom-control-label" for="exampleCustomCheckbox4">&nbsp;</label></div>
+            </div>
+            <div class="widget-content-left flex2">
+              <div class="widget-heading">Office rent </div>
+              <div class="widget-subheading">By Samino!</div>
+            </div>
+            <div class="widget-content-right"> <button class="border-0 btn-transition btn btn-outline-success"> <i class="fa fa-check"></i></button> <button class="border-0 btn-transition btn btn-outline-danger"> <i class="fa fa-trash"></i> </button> </div>
+          </div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="todo-indicator bg-info"></div>
+        <div class="widget-content p-0">
+          <div class="widget-content-wrapper">
+            <div class="widget-content-left mr-2">
+              <div class="custom-checkbox custom-control"><input class="custom-control-input" id="exampleCustomCheckbox2" type="checkbox"><label class="custom-control-label" for="exampleCustomCheckbox2">&nbsp;</label></div>
+            </div>
+            <div class="widget-content-left">
+              <div class="widget-heading">Office grocery shopping</div>
+              <div class="widget-subheading">By Tida</div>
+            </div>
+            <div class="widget-content-right"> <button class="border-0 btn-transition btn btn-outline-success"> <i class="fa fa-check"></i></button> <button class="border-0 btn-transition btn btn-outline-danger"> <i class="fa fa-trash"></i> </button> </div>
+          </div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="todo-indicator bg-success"></div>
+        <div class="widget-content p-0">
+          <div class="widget-content-wrapper">
+            <div class="widget-content-left mr-2">
+              <div class="custom-checkbox custom-control"><input class="custom-control-input" id="exampleCustomCheckbox3" type="checkbox"><label class="custom-control-label" for="exampleCustomCheckbox3">&nbsp;</label></div>
+            </div>
+            <div class="widget-content-left flex2">
+              <div class="widget-heading">Ask for Lunch to Clients</div>
+              <div class="widget-subheading">By Office Admin</div>
+            </div>
+            <div class="widget-content-right"> <button class="border-0 btn-transition btn btn-outline-success"> <i class="fa fa-check"></i></button> <button class="border-0 btn-transition btn btn-outline-danger"> <i class="fa fa-trash"></i> </button> </div>
+          </div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="todo-indicator bg-success"></div>
+        <div class="widget-content p-0">
+          <div class="widget-content-wrapper">
+            <div class="widget-content-left mr-2">
+              <div class="custom-checkbox custom-control"><input class="custom-control-input" id="exampleCustomCheckbox10" type="checkbox"><label class="custom-control-label" for="exampleCustomCheckbox10">&nbsp;</label></div>
+            </div>
+            <div class="widget-content-left flex2">
+              <div class="widget-heading">Client Meeting at 11 AM</div>
+              <div class="widget-subheading">By CEO</div>
+            </div>
+            <div class="widget-content-right"> <button class="border-0 btn-transition btn btn-outline-success"> <i class="fa fa-check"></i></button> <button class="border-0 btn-transition btn btn-outline-danger"> <i class="fa fa-trash"></i> </button> </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+
+    <!--    <div class="input-group mb-3" v-for="(todo, index) in todoList">-->
+<!--      <input type="text" class="form-control" :value="todo.name" :readonly="isReadonly">-->
+<!--      <div class="input-group-append">-->
+<!--        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"-->
+<!--                aria-haspopup="true" aria-expanded="false">Dropdown-->
+<!--        </button>-->
+<!--        <div class="dropdown-menu">-->
+<!--          <li>-->
+<!--            <button type="button" class="dropdown-item" data-toggle="modal" data-target="#detailModal"-->
+<!--                    @click="getDetail(todo)">상세보기-->
+<!--            </button>-->
+<!--          </li>-->
+<!--          <li>-->
+<!--            <div class="dropdown-divider"></div>-->
+<!--          </li>-->
+<!--          <li><a href="#" class="dropdown-item" @click="deleteTodo(todo, index)">삭제</a></li>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
 
     <!-- Modal -->
     <div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="detailModalCenterTitle"
@@ -99,19 +198,15 @@
         todoList: [],
         detail: [],
         temp: {},
+        isReadonly: true,
       }
     },
     methods: {
-      deleteTodo(todo) {
-        return;
-        // this.todoList.forEach(function(_todo,i, obj){
-        //   if(_todo.id === todo.id){
-        //     this.$http.delete('http://localhost:8226/api/todoList/'+todo.id)
-        //     .then((result) => {
-        //         obj.splice(i, 1)
-        //     })
-        //   }
-        // })
+      deleteTodo(todo, index) {
+        console.log(index);
+        this.$http.delete('http://localhost:8226/api/detail/' + index)
+          .then((result) => {
+          })
       },
       createTodo(name) {
         if (name != null) {

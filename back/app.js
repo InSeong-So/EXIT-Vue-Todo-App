@@ -93,7 +93,7 @@ app.route('/api/detail/:idx')
         }
         await res.json(result)
     })
-app.route('/dbs')
+app.route('/api/delete/:idx')
     .get(async (req, res) => {
         connection.query('SELECT * FROM REST_API_01', (err, rows) => {
             if (err) throw err;
