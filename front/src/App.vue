@@ -68,13 +68,8 @@
     align-items: center
   }
 
-  .widget-content .widget-content-right.widget-content-actions {
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity .2s
-  }
-
   .widget-content .widget-content-right {
+    float: right;
     margin-left: auto
   }
 
