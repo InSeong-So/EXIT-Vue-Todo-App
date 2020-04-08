@@ -196,9 +196,11 @@
     },
     methods: {
       deleteTodo(todo, index) {
-        console.log(index);
-        this.$http.delete('http://localhost:8226/api/detail/' + index)
+        this.$http.delete('http://localhost:8226/api/delete/' + index)
           .then((result) => {
+            if (result.data.success) {
+              // this.getTodoList()
+            }
           })
       },
       createTodo(name) {
@@ -211,12 +213,12 @@
           this.$http.post('http://localhost:8226/api/todoList', {
             todoList: this.todoList
           }).then((result) => {
-            this.getTodos()
+            // this.getTodoList()
           })
           this.name = null
         }
       },
-      getTodos() {
+      getTodoList() {
         this.$http.get('http://localhost:8226/api/todoList')
           .then((result) => {
             this.todoList = result.data.data;
@@ -231,7 +233,10 @@
       }
     },
     mounted() {
-      this.getTodos();
+      this.getTodoList();
+    },
+    updated() {
+      this.getTodoList();
     }
   }
 </script>

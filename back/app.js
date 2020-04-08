@@ -94,18 +94,19 @@ app.route('/api/detail/:idx')
         await res.json(result)
     })
 app.route('/api/delete/:idx')
-    .get(async (req, res) => {
-        connection.query('SELECT * FROM REST_API_01', (err, rows) => {
-            if (err) throw err;
-
-            console.log('Result is : ', rows);
-            res.send(rows);
-        })
-    })
     .delete(async (req, res) => {
-        const result = {success: true}
-        const detail = req.body.detail
-        const idx = req.params.idx
+        const result = {success: true};
+        try {
+            const json = await db.getData();
+            const todoList = json.todoList;
+            const idx = req.params.idx;
+            todoList.splice(idx, 1);
+            await db.setData(json);
+        } catch (err) {
+            result.success = false;
+            result.err = err;
+        }
+        await res.json(result);
     })
 
 app.listen(8226, () => {
