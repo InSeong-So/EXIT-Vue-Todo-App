@@ -53,9 +53,7 @@ app.route('/api/detail/:idx')
             const json = await db.getData()
             let list = []
             json.detail.forEach((v, idx) => {
-                if (v.idx === reIdx) {
-                    list.push(v)
-                }
+                list.push(v)
             })
             result.data = list
         } catch (err) {
@@ -72,20 +70,6 @@ app.route('/api/detail/:idx')
             const json = await db.getData()
             detail.idx = idx
             json.detail.push(detail)
-            await db.setData(json)
-        } catch (err) {
-            result.success = false
-            result.err = err
-        }
-        await res.json(result)
-    })
-    .put(async (req, res) => {
-        const result = {success: true}
-        const detail = req.body.detail
-        const idx = req.params.idx
-        try {
-            const json = await db.getData()
-            json.detail[idx] = detail
             await db.setData(json)
         } catch (err) {
             result.success = false

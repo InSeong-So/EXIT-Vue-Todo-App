@@ -189,7 +189,7 @@
       return {
         name: null,
         todoList: [],
-        detail: [],
+        detailList: [],
         temp: {},
         isReadonly: true,
       }
@@ -225,11 +225,11 @@
           })
       },
       getDetail(index) {
-        return;
-        // this.$http.get('http://localhost:8226/api/detail/' + index)
-        //   .then((result) => {
-        //     this.todoList = result.data.data;
-        //   })
+        this.$http.get('http://localhost:8226/api/detail/' + index)
+          .then((result) => {
+            this.detailList = result.data.data;
+            console.log(this.detailList);
+          })
       }
     },
     mounted() {
