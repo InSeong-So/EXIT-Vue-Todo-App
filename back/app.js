@@ -52,8 +52,10 @@ app.route('/api/detail/:idx')
         try {
             const json = await db.getData()
             let list = []
-            json.detail.forEach((v, idx) => {
-                list.push(v)
+            json.detail.forEach((v) => {
+                if (reIdx === v.idx) {
+                    list.push(v)
+                }
             })
             result.data = list
         } catch (err) {

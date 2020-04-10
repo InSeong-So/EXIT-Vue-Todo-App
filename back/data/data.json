@@ -14,29 +14,57 @@
     },
     {
       "idx": 4,
-      "name": "FOURTH THING"
+      "name": "TEST"
     }
   ],
   "detail": [
     {
       "name": "test",
       "state": false,
-      "idx": 0
+      "idx": "0",
+      "code": "",
+      "items" : [
+        {
+          "subject" : "",
+          "finished" : false
+        }
+      ]
     },
     {
       "name": "test2",
       "state": false,
-      "idx": 1
+      "idx": "1",
+      "code": "",
+      "items" : [
+        {
+          "subject" : "",
+          "finished" : false
+        }
+      ]
     },
     {
       "name": "test1",
       "state": false,
-      "idx": 0
+      "idx": "0",
+      "code": "",
+      "items" : [
+        {
+          "subject" : "",
+          "finished" : false
+        }
+      ]
     },
     {
       "name": "test3",
       "state": false,
-      "idx": 1
+      "idx": "1",
+      "code": "",
+      "items" : [
+        {
+          "subject" : "",
+          "finished" : false
+        }
+      ]
     }
   ]
 }

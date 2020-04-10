@@ -69,7 +69,7 @@
 
               <div class=" dropdown-menu">
                 <button type="button" class="dropdown-item" data-toggle="modal" data-target="#detailModal"
-                        @click="getDetail(todo)">상세보기
+                        @click="getDetail(index)">상세보기
                 </button>
                 <div class="dropdown-divider"></div>
                 <a href="#" class="dropdown-item" @click="deleteTodo(todo, index)">삭제</a>
@@ -143,23 +143,25 @@
                   <div class="row" style="background-color: green">
                     asdf
                   </div>
-                  Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas
-                  eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-
-                  Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue
-                  laoreet rutrum faucibus dolor auctor.
-
-                  Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl
-                  consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
-
-                  Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas
-                  eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-
-                  Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue
-                  laoreet rutrum faucibus dolor auctor.
-
-                  Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl
-                  consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+                      <div class="input-group mt-3 mb-3" v-for="(detail, index) in detailList">
+                        <input type="text" class="form-control" :value="detail.name" :readonly="isReadonly">
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
+                                  aria-haspopup="true" aria-expanded="false">Dropdown
+                          </button>
+                          <div class="dropdown-menu">
+                            <li>
+                              <button type="button" class="dropdown-item" data-toggle="modal" data-target="#detailModal"
+                                      @click="getDetail(detail)">상세보기
+                              </button>
+                            </li>
+                            <li>
+                              <div class="dropdown-divider"></div>
+                            </li>
+                            <li><a href="#" class="dropdown-item" @click="deleteTodo(detail, index)">삭제</a></li>
+                          </div>
+                        </div>
+                      </div>
                   <div class="row" style="background-color: green">
                     asdf
                   </div>
