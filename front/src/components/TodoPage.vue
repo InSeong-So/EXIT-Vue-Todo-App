@@ -143,32 +143,47 @@
                   <div class="row" style="background-color: green">
                     asdf
                   </div>
-                      <div class="input-group mt-3 mb-3" v-for="(detail, index) in detailList">
-                        <input type="text" class="form-control" :value="detail.name" :readonly="isReadonly">
-                        <div class="input-group-append">
-                          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
-                                  aria-haspopup="true" aria-expanded="false">Dropdown
-                          </button>
-                          <div class="dropdown-menu">
-                            <li>
-                              <button type="button" class="dropdown-item" data-toggle="modal" data-target="#detailModal"
-                                      @click="getDetail(detail)">상세보기
-                              </button>
-                            </li>
-                            <li>
-                              <div class="dropdown-divider"></div>
-                            </li>
-                            <li><a href="#" class="dropdown-item" @click="deleteTodo(detail, index)">삭제</a></li>
-                          </div>
-                        </div>
-                      </div>
+                  <ul class="list-group mt-3 mb-3" v-for="(detail, index) in detailList">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      {{ detail.name }}
+                      <span class="badge badge-primary badge-pill">{{detail.items.length}}</span>
+                    </li>
+                  </ul>
                   <div class="row" style="background-color: green">
                     asdf
                   </div>
                 </div>
                 <div class="col-md-4" style="background-color: red">
-                  Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas
-                  eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                  <div class="row">
+                    <nav aria-label="breadcrumb" class="container-fluid">
+                      <ol class="breadcrumb">
+                        <li class="breadcrumb-item active" aria-current="page">Home</li>
+                      </ol>
+                    </nav>
+                    <div class="list-group list-group-flush container-fluid">
+                      <a href="#" class="list-group-item list-group-item-action">Members</a>
+                      <a href="#" class="list-group-item list-group-item-action">Labels</a>
+                      <a href="#" class="list-group-item list-group-item-action">CheckList</a>
+                      <a href="#" class="list-group-item list-group-item-action">Due Date</a>
+                      <a href="#" class="list-group-item list-group-item-action">Attachment</a>
+                      <a href="#" class="list-group-item list-group-item-action">Cover</a>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <nav aria-label="breadcrumb" class="container-fluid">
+                      <ol class="breadcrumb">
+                        <li class="breadcrumb-item active" aria-current="page">Home</li>
+                      </ol>
+                    </nav>
+                    <div class="list-group list-group-flush container-fluid">
+                      <a href="#" class="list-group-item list-group-item-action">Move</a>
+                      <a href="#" class="list-group-item list-group-item-action">Copy</a>
+                      <a href="#" class="list-group-item list-group-item-action">Make Template</a>
+                      <a href="#" class="list-group-item list-group-item-action">Watch</a>
+                      <a href="#" class="list-group-item list-group-item-action">Archive</a>
+                      <a href="#" class="list-group-item list-group-item-action">Share</a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

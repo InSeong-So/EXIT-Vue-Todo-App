@@ -2,25 +2,33 @@
   "todoList": [
     {
       "idx": 1,
-      "name": "FIRST THING"
+      "name": "FIRST THING",
+      "created" : "20200202",
+      "modified": "20200304"
     },
     {
       "idx": 2,
-      "name": "SECOND THING"
+      "name": "SECOND THING",
+      "created" : "20200301",
+      "modified": "20200402"
     },
     {
       "idx": 3,
-      "name": "THIRD THING"
+      "name": "THIRD THING",
+      "created" : "20200405",
+      "modified": "20200406"
     },
     {
       "idx": 4,
-      "name": "TEST"
+      "name": "TEST",
+      "created" : "20200411",
+      "modified": ""
     }
   ],
   "detail": [
     {
       "name": "test",
-      "state": false,
+      "final": false,
       "idx": "0",
       "code": "",
       "items" : [
@@ -32,7 +40,7 @@
     },
     {
       "name": "test2",
-      "state": false,
+      "final": false,
       "idx": "1",
       "code": "",
       "items" : [
@@ -44,7 +52,7 @@
     },
     {
       "name": "test1",
-      "state": false,
+      "final": false,
       "idx": "0",
       "code": "",
       "items" : [
@@ -56,7 +64,7 @@
     },
     {
       "name": "test3",
-      "state": false,
+      "final": false,
       "idx": "1",
       "code": "",
       "items" : [
