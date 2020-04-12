@@ -1,5 +1,9 @@
 # TO-DO App
 
+## Library
+- Bootstrap4
+- ECMASCRIPT 6
+
 ## Front *(View)*
 - Vue
   - Vue-Cli
@@ -15,3 +19,4 @@
 
 ## Content
 - TO-DO App 배포
+- Trello 벤치마킹
