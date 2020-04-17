@@ -17,6 +17,13 @@
 
 <br>
 
+## Design
+- View
+
+- Process
+
+<br>
+
 ## Content
 - TO-DO App 배포
 - Trello 벤치마킹
