@@ -30,6 +30,7 @@
   }
 
   .widget-subheading {
+    text-align: left;
     color: #858a8e;
     font-size: 10px
   }
