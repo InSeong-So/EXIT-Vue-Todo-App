@@ -1,7 +1,26 @@
+const MongoClient = require('mongodb').MongoClient;
+const url = "mongodb://39.115.14.230:27017";
+
+let _db;
+
 module.exports = {
-    host: '101.235.203.94',
-    user: 'sis_user',
-    password: 'sis_user1!',
-    port: 3105,
-    database: 'SIS_EMPLOYMENT'
+    connectingServers : async function(callback){
+        try {
+            await MongoClient.connect(url, {useNewUrlParser: true}, function (err, client) {
+                _db = client.db('test.db');
+                return callback(err);
+            });
+        }
+        catch (e) {
+            throw e;
+        }
+    },
+
+    getDb : function(){
+        return _db;
+    },
+
+    disconnectDb : function(){
+        return _db.close();
+    }
 };

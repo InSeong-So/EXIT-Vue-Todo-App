@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import LoginPage from '@/components/LoginPage'
 import TodoPage from '@/components/TodoPage'
 
 import axios from 'axios'
@@ -14,5 +15,11 @@ export default new Router({
       path: '/',
       name: 'TodoPage',
       component: TodoPage
-    },]
+    },
+    {
+      path:'/login',
+      name:'LoginPage',
+      component: LoginPage
+    }
+  ]
 });

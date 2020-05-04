@@ -1,9 +1,8 @@
 const express = require('express')
 const db = require('./data/db.js') // 파일 로드를 위한 모듈
 const cors = require('cors')
-const mysql = require('mysql');
-const db_config = require('./src/db/config')
-const connection = mysql.createConnection(db_config);
+let mongoUtil = require('./src/db/config');
+let mongoose = require("mongoose");
 
 const app = express()
 
