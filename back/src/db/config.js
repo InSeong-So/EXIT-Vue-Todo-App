@@ -1,26 +1,20 @@
-const MongoClient = require('mongodb').MongoClient;
-const url = "mongodb://39.115.14.230:27017";
+const mysql      = require('mysql');
+// 비밀번호는 별도의 파일로 분리해서 버전관리에 포함시키지 않아야 합니다.
+const connection = mysql.createConnection({
+    host     : '',
+    port     : '',
+    user     : '',
+    password : '',
+    database : ''
+});
 
-let _db;
+connection.connect();
 
-module.exports = {
-    connectingServers : async function(callback){
-        try {
-            await MongoClient.connect(url, {useNewUrlParser: true}, function (err, client) {
-                _db = client.db('test.db');
-                return callback(err);
-            });
-        }
-        catch (e) {
-            throw e;
-        }
-    },
-
-    getDb : function(){
-        return _db;
-    },
-
-    disconnectDb : function(){
-        return _db.close();
+connection.query('SELECT * FROM REST_API_01', function (error, results, fields) {
+    if (error) {
+        console.log(error);
     }
-};
+    console.log(results);
+});
+
+connection.end();
