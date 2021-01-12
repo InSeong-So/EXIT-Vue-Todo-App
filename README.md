@@ -27,3 +27,6 @@
 ## Content
 - TO-DO App 배포
 - Trello 벤치마킹
+
+## 참고
+- 서버 반영 대기
