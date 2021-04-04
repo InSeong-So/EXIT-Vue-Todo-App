@@ -1,32 +1,24 @@
-# TO-DO App
+# todo-app
 
-## Library
-- Bootstrap4
-- ECMASCRIPT 6
+## Project setup
+```
+npm install
+```
 
-## Front *(View)*
-- Vue
-  - Vue-Cli
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
-<br>
+### Compiles and minifies for production
+```
+npm run build
+```
 
-## Back *(Server)*
-- Node
-  - Express
-  - Typescript
+### Lints and fixes files
+```
+npm run lint
+```
 
-<br>
-
-## Design
-- View
-
-- Process
-
-<br>
-
-## Content
-- TO-DO App 배포
-- Trello 벤치마킹
-
-## 참고
-- 서버 반영 대기
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
